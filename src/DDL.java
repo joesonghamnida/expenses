@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DDL {
 
@@ -9,7 +10,8 @@ public class DDL {
         return conn;
     }
 
-    public static void createDatabase(Connection connection){
-
+    public static void createDatabase(Connection conn)throws SQLException{
+        Statement statement = conn.createStatement();
+        statement.execute("CREATE TABLE IF NOT EXISTS expenses(id IDENTITY expense VARCHAR amount INTEGER payment_source VARCHAR expense_type INTEGER)");
     }
 }
