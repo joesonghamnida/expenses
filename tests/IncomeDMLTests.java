@@ -4,12 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DMLTests {
+public class IncomeDMLTests {
 
     //helper method
     public Connection startConnection() throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:h2:mem:test");
-        DDL.createDatabase(conn);
+        IncomeDDL.createIncomeDatabase(conn);
         return conn;
     }
 
@@ -18,20 +18,5 @@ public class DMLTests {
 
     @Test
     public void RemoveDataFromDB(){}
-
-    @Test
-    public void GetAllExpenses(){}
-
-    @Test
-    public void GetExepensesByDateRange(){}
-
-    @Test
-    public void GetExpensesByAmount(){}
-
-    @Test
-    public void GetExpensesByType(){}
-
-    @Test
-    public void GetExpensesByBank(){}
 
 }
