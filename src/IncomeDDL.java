@@ -10,13 +10,10 @@ public class IncomeDDL {
         return conn;
     }
 
+    //TODO: deal with timestamps
     public static void createIncomeDatabase(Connection conn)throws SQLException{
         Statement statement = conn.createStatement();
-        statement.execute("CREATE TABLE IF NOT EXISTS income(id IDENTITY income VARCHAR amount INTEGER payDate VARCHAR payment_source VARCHAR)");
+        statement.execute("CREATE TABLE IF NOT EXISTS income(id IDENTITY income VARCHAR amount INTEGER depositDate VARCHAR)");
     }
 
-    public static void createExpensesDatabase(Connection conn)throws SQLException{
-        Statement statement = conn.createStatement();
-        statement.execute("CREATE TABLE IF NOT EXISTS expenses(id IDENTITY expense VARCHAR amount INTEGER payment_source VARCHAR expense_type INTEGER)");
-    }
 }
